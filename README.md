@@ -15,3 +15,7 @@ to simulate different cases (happy and errors).
 
 The heart of the repository is the `swift package` called `Features`. For simplicity it is only one Package with many `targets`.
 It contains not only features but also independent and encapsulated units which are used by other targets.
+
+## Swift Package Plugins
+
+

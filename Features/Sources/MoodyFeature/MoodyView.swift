@@ -3,6 +3,8 @@ import SwiftUI
 public struct MoodyView: View {
     public static let info = "Let's track your mood!"
 
+    var id = "asdf"
+
     public init() { }
 
     public var body: some View {
