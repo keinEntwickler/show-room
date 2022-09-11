@@ -3,7 +3,6 @@ import Foundation
 
 @main
 struct SwiftLintPlugin: BuildToolPlugin {
-
     func createBuildCommands(
         context: PluginContext,
         target: Target
@@ -11,11 +10,11 @@ struct SwiftLintPlugin: BuildToolPlugin {
         [
             .prebuildCommand(
                 displayName: "SwiftLintPlugin",
-                executable: try Self.swiftlint(),
+                executable: swiftlintPath,
                 arguments: [
                     "--config",
-                    try Self.swiftLintConfig(),
-                    FileManager.default.currentDirectoryPath
+                    swiftLintConfigPath,
+                    target.directory.string
                 ],
                 outputFilesDirectory: context.pluginWorkDirectory
             )
@@ -23,44 +22,42 @@ struct SwiftLintPlugin: BuildToolPlugin {
     }
 }
 
-private extension SwiftLintPlugin {
+let swiftlintPath: PackagePlugin.Path = {
+    // TODO: Better approach wohld be to handle it through swift package!
+    let path = process(
+        executablePath: "/usr/bin/which",
+        arguments: ["swiftlint"]
+    )
 
-    static func swiftlint() throws -> PackagePlugin.Path {
-        let process = Process()
-        // TODO: has to be installed
-        // Better approach wohld be to handle it through swift package!
-        process.executableURL = .init(fileURLWithPath: "/usr/bin/which")
-        process.arguments = ["swiftLint"]
-
-        let pipe = Pipe()
-        process.standardOutput = pipe
-        try process.run()
-        process.waitUntilExit()
-
-        let output = String(
-            data: pipe.fileHandleForReading.readDataToEndOfFile(),
-            encoding: String.Encoding.utf8
-        )!
-
-        return .init(output.trimmingCharacters(in: .whitespacesAndNewlines))
+    if path.isEmpty {
+        Diagnostics.error("SwiftLint not installed, download from https://github.com/realm/SwiftLint")
     }
+    
+    return .init(path)
+}()
 
-    static func swiftLintConfig() throws -> String {
-        let process = Process()
-        process.executableURL = .init(fileURLWithPath: "/usr/bin/git")
-        process.arguments = ["rev-parse", "--show-toplevel"]
+let swiftLintConfigPath: String = {
+    process(
+        executablePath: "/usr/bin/git",
+        arguments: ["rev-parse", "--show-toplevel"]
+    ) + "/.swiftlint.yml"
+}()
 
-        let pipe = Pipe()
-        process.standardOutput = pipe
-        try process.run()
-        process.waitUntilExit()
-
-        let output = String(
-            data: pipe.fileHandleForReading.readDataToEndOfFile(),
-            encoding: String.Encoding.utf8
-        )!.trimmingCharacters(in: .whitespacesAndNewlines)
-
-        // TODO: check if it is used ...
-        return output + "/.swiftlint.yml"
-    }
+func process(
+    executablePath: String,
+    arguments: [String]
+) -> String {
+    let process = Process()
+    process.executableURL = .init(fileURLWithPath: executablePath)
+    process.arguments = arguments
+    
+    let pipe = Pipe()
+    process.standardOutput = pipe
+    try! process.run()
+    process.waitUntilExit()
+    
+    return String(
+        data: pipe.fileHandleForReading.readDataToEndOfFile(),
+        encoding: String.Encoding.utf8
+    )!.trimmingCharacters(in: .whitespacesAndNewlines)
 }

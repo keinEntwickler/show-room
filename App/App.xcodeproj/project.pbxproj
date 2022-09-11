@@ -30,6 +30,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A9713C0928CD3BBD007E9D31 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D8A06A4F28C4A33B00622368 = {
 			isa = PBXGroup;
 			children = (
@@ -37,6 +44,7 @@
 				D8A06A5D28C4A33B00622368 /* ContentView.swift */,
 				D8A06A5F28C4A33C00622368 /* Assets.xcassets */,
 				D8A06A5928C4A33B00622368 /* Products */,
+				A9713C0928CD3BBD007E9D31 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +72,8 @@
 			dependencies = (
 			);
 			name = ShowRoom;
+			packageProductDependencies = (
+			);
 			productName = ShowRoom;
 			productReference = D8A06A5828C4A33B00622368 /* ShowRoom.app */;
 			productType = "com.apple.product-type.application";
