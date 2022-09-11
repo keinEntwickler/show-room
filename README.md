@@ -16,9 +16,7 @@ to simulate different cases (happy and errors).
 The heart of the repository is the `swift package` called `Features`. For simplicity it is only one Package with many `targets`.
 It contains not only features but also independent and encapsulated units which are used by other targets.
 
-## Swift Package Plugins
-
-For now we have to do it by our own - especially for [swiftlint](https://github.com/realm/SwiftLint).
+For now we have to do `Swift Package Plugins` by our own - especially for [swiftlint](https://github.com/realm/SwiftLint).
 
 ## Xcode Cloud
 
