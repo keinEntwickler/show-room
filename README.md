@@ -19,3 +19,8 @@ It contains not only features but also independent and encapsulated units which 
 ## Swift Package Plugins
 
 For now we have to do it by our own - especially for [swiftlint](https://github.com/realm/SwiftLint).
+
+## Xcode Cloud
+
+This repository is linked to Xcode Cloud. There are simple `Pull Request Workflow`s for building and testing the different targets.
+In the future a `release tag Workflow` will push the different products via `TestFlight` to different test groups.
