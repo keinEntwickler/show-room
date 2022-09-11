@@ -18,4 +18,4 @@ It contains not only features but also independent and encapsulated units which 
 
 ## Swift Package Plugins
 
-
+For now we have to do it by our own - especially for [swiftlint](https://github.com/realm/SwiftLint).

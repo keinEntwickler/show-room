@@ -1,5 +1,6 @@
 opt_in_rules:
   - sorted_imports
+  - file_header
 
 disabled_rules:
   - force_try
@@ -20,6 +21,10 @@ type_name:
   max_length:
     warning: 40
     error: 50
+
+file_header:
+  severity: error
+
 
 identifier_name:
   min_length:

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D8A06A5728C4A33B00622368"
-               BuildableName = "ShowRoom.app"
+               BuildableName = "ShowRoom keinEntwickler.app"
                BlueprintName = "ShowRoom"
                ReferencedContainer = "container:App.xcodeproj">
             </BuildableReference>
@@ -28,6 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "MoodyFeatureTests"
+               BuildableName = "MoodyFeatureTests"
+               BlueprintName = "MoodyFeatureTests"
+               ReferencedContainer = "container:../Features">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -45,7 +55,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D8A06A5728C4A33B00622368"
-            BuildableName = "ShowRoom.app"
+            BuildableName = "ShowRoom keinEntwickler.app"
             BlueprintName = "ShowRoom"
             ReferencedContainer = "container:App.xcodeproj">
          </BuildableReference>
@@ -62,7 +72,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D8A06A5728C4A33B00622368"
-            BuildableName = "ShowRoom.app"
+            BuildableName = "ShowRoom keinEntwickler.app"
             BlueprintName = "ShowRoom"
             ReferencedContainer = "container:App.xcodeproj">
          </BuildableReference>

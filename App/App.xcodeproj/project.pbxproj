@@ -10,13 +10,17 @@
 		D8A06A5C28C4A33B00622368 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A06A5B28C4A33B00622368 /* App.swift */; };
 		D8A06A5E28C4A33B00622368 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A06A5D28C4A33B00622368 /* ContentView.swift */; };
 		D8A06A6028C4A33C00622368 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8A06A5F28C4A33C00622368 /* Assets.xcassets */; };
+		D8CEFBA228CE25C400FAC568 /* MoodyFeature in Frameworks */ = {isa = PBXBuildFile; productRef = D8CEFBA128CE25C400FAC568 /* MoodyFeature */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D8A06A5828C4A33B00622368 /* ShowRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShowRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D83B7E4328CDE847006582BE /* ShowRoom-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ShowRoom-Info.plist"; sourceTree = "<group>"; };
+		D8A06A5828C4A33B00622368 /* ShowRoom keinEntwickler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ShowRoom keinEntwickler.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A06A5B28C4A33B00622368 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		D8A06A5D28C4A33B00622368 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D8A06A5F28C4A33C00622368 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D8A1980228CDED7E0029B4D1 /* Plugins */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Plugins; path = ../Plugins; sourceTree = "<group>"; };
+		D8A1980328CDEDA50029B4D1 /* Plugins */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Plugins; path = ../Plugins; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -24,6 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8CEFBA228CE25C400FAC568 /* MoodyFeature in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,17 +48,28 @@
 				D8A06A5B28C4A33B00622368 /* App.swift */,
 				D8A06A5D28C4A33B00622368 /* ContentView.swift */,
 				D8A06A5F28C4A33C00622368 /* Assets.xcassets */,
+				D83B7E4328CDE847006582BE /* ShowRoom-Info.plist */,
 				D8A06A5928C4A33B00622368 /* Products */,
 				A9713C0928CD3BBD007E9D31 /* Frameworks */,
+				D8A1980128CDED7E0029B4D1 /* Packages */,
 			);
 			sourceTree = "<group>";
 		};
 		D8A06A5928C4A33B00622368 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D8A06A5828C4A33B00622368 /* ShowRoom.app */,
+				D8A06A5828C4A33B00622368 /* ShowRoom keinEntwickler.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D8A1980128CDED7E0029B4D1 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				D8A1980228CDED7E0029B4D1 /* Plugins */,
+				D8A1980328CDEDA50029B4D1 /* Plugins */,
+			);
+			name = Packages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -70,12 +86,14 @@
 			buildRules = (
 			);
 			dependencies = (
+				D8A1980528CDEDF30029B4D1 /* PBXTargetDependency */,
 			);
 			name = ShowRoom;
 			packageProductDependencies = (
+				D8CEFBA128CE25C400FAC568 /* MoodyFeature */,
 			);
 			productName = ShowRoom;
-			productReference = D8A06A5828C4A33B00622368 /* ShowRoom.app */;
+			productReference = D8A06A5828C4A33B00622368 /* ShowRoom keinEntwickler.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -133,6 +151,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D8A1980528CDEDF30029B4D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = D8A1980428CDEDF30029B4D1 /* SwiftLintPlugin */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		D8A06A6528C4A33C00622368 /* Debug */ = {
@@ -255,6 +280,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ShowRoom-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = ShowRoom;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -271,7 +298,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.keinEntwickler.showRoom;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME) keinEntwickler";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -293,6 +320,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ShowRoom-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = ShowRoom;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -309,7 +338,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.keinEntwickler.showRoom;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME) keinEntwickler";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -342,6 +371,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D8A1980428CDEDF30029B4D1 /* SwiftLintPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "plugin:SwiftLintPlugin";
+		};
+		D8CEFBA128CE25C400FAC568 /* MoodyFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MoodyFeature;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D8A06A5028C4A33B00622368 /* Project object */;
 }
