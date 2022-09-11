@@ -44,12 +44,13 @@ extension Command {
             displayName: "Running SwiftLint for \(displayName)",
             executable: executable,
             arguments: [
-                "lint",
                 path,
                 "--config",
-                swiftLintConfigPath,
-                "--cache-path",
-                "\(workDirectory.string)/cache"
+                sourceRoot + "/.swiftlint.yml",
+                "--no-cache"
+                // not working on Xcode Cloud
+                // "--cache-path",
+                // "\(workDirectory.string)/cache"
             ]
         )
     }
@@ -57,11 +58,11 @@ extension Command {
 
 // MARK: - Config
 
-let swiftLintConfigPath: String = {
+let sourceRoot: String = {
     process(
         executablePath: "/usr/bin/git",
         arguments: ["rev-parse", "--show-toplevel"]
-    ) + "/.swiftlint.yml"
+    )
 }()
 
 func process(
