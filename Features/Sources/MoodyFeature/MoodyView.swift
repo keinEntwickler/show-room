@@ -1,3 +1,4 @@
+import SomeTest
 import SwiftUI
 
 public struct MoodyView: View {

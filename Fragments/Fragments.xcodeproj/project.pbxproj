@@ -13,6 +13,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D8A1980728CDEE040029B4D1 /* Plugins */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Plugins; path = ../Plugins; sourceTree = "<group>"; };
 		D8E97C2C28C4A80E002FDDD3 /* MoodyFragment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodyFragment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8E97C2E28C4A80F002FDDD3 /* MoodyFragment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodyFragment.swift; sourceTree = "<group>"; };
 		D8E97C3228C4A80F002FDDD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -36,6 +37,7 @@
 				D8E97C2D28C4A80F002FDDD3 /* MoodyFragment */,
 				D870B57328C4A65100052385 /* Products */,
 				D8EC747028C4CD0D00C4661C /* Frameworks */,
+				D8A1980628CDEE040029B4D1 /* Packages */,
 			);
 			sourceTree = "<group>";
 		};
@@ -45,6 +47,14 @@
 				D8E97C2C28C4A80E002FDDD3 /* MoodyFragment.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D8A1980628CDEE040029B4D1 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				D8A1980728CDEE040029B4D1 /* Plugins */,
+			);
+			name = Packages;
 			sourceTree = "<group>";
 		};
 		D8E97C2D28C4A80F002FDDD3 /* MoodyFragment */ = {
@@ -77,6 +87,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				D8A1980928CDEE0D0029B4D1 /* PBXTargetDependency */,
 			);
 			name = MoodyFragment;
 			packageProductDependencies = (
@@ -140,6 +151,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D8A1980928CDEE0D0029B4D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = D8A1980828CDEE0D0029B4D1 /* SwiftLintPlugin */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		D870B57F28C4A65300052385 /* Debug */ = {
@@ -351,6 +369,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D8A1980828CDEE0D0029B4D1 /* SwiftLintPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "plugin:SwiftLintPlugin";
+		};
 		D8EC747528C4D15200C4661C /* MoodyFeature */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MoodyFeature;
